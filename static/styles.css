@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #ffcccc, #cc99ff, #99ccff, #99ff99);
+    background-size: 400% 400%; /* Adjust the size for the animation */
+    animation: gradientAnimation 15s ease infinite; /* Adjust the animation duration */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* Start position of the gradient animation */
+    }
+    50% {
+        background-position: 100% 50%; /* Middle position of the gradient animation */
+    }
+    100% {
+        background-position: 0% 50%; /* End position of the gradient animation */
+    }
+}
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.chat-container {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0; /* Light gray background color for chat */
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: #3399ff; /* Blue background color for user messages */
+    color: #fff;
+    align-self: flex-end;
+}
+
+.luna-message {
+    background-color: #c0bebe; /* Light gray background color for Luna's messages */
+    color: #333;
+    align-self: flex-start;
+}
+
+.message p {
+    margin: 0;
+}
+
+.chat-form {
+    display: flex;
+    align-items: center;
+}
+
+.message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.send-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background-color: #555;
+}
+
+.typing-indicator {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.typing-dot-container {
+    display: flex;
+    align-items: center;
+}
+
+.typing-dot {
+    width: 10px;
+    height: 10px;
+    background-color:  #c0bebe;
+    border-radius: 50%;
+    margin-right: 5px;
+    animation: typingAnimation 1s infinite;
+}
+
+@keyframes typingAnimation {
+    0%, 50%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px);
+    }
+}
+
+.message {
+    opacity: 0;
+    animation: slideAndFadeIn 0.5s forwards;
+}
+
+@keyframes slideAndFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
